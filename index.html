@@ -1,1 +1,717 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Feliz 17 Anos, Cássia ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+
+    background:
+    radial-gradient(circle at top,#ffd5e8,#ff79b5 45%,#a9165e 100%);
+}
+
+/* FUNDO */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background-image:
+    radial-gradient(circle,rgba(255,255,255,.3) 1px,transparent 1px);
+    background-size:35px 35px;
+    animation:moverFundo 8s linear infinite;
+}
+
+@keyframes moverFundo{
+    from{background-position:0 0}
+    to{background-position:70px 70px}
+}
+
+
+/* TELA INICIAL */
+.entrada{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    position:relative;
+    z-index:2;
+    animation:entrada 1.2s ease;
+}
+
+@keyframes entrada{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.pequeno{
+    font-size:15px;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+h1{
+    font-size:clamp(40px,11vw,75px);
+    line-height:1;
+    text-shadow:0 5px 20px rgba(90,0,45,.4);
+    animation:brilho 2s infinite alternate;
+}
+
+@keyframes brilho{
+    from{
+        text-shadow:0 5px 20px rgba(90,0,45,.4);
+    }
+    to{
+        text-shadow:
+        0 0 10px white,
+        0 0 30px #ffd2e8,
+        0 5px 20px rgba(90,0,45,.4);
+    }
+}
+
+
+/* NÚMERO 17 */
+.numero{
+    font-size:clamp(100px,28vw,165px);
+    font-weight:900;
+    line-height:.9;
+    margin:15px 0;
+
+    background:linear-gradient(
+        white,
+        #ffe1ef,
+        #ffb0d3
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    filter:drop-shadow(
+        0 10px 15px rgba(100,0,50,.3)
+    );
+
+    animation:pulsar 1.8s ease-in-out infinite;
+}
+
+@keyframes pulsar{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+.subtitulo{
+    font-size:24px;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.bolo{
+    font-size:55px;
+    margin:18px 0;
+    animation:flutuar 2s ease-in-out infinite;
+}
+
+@keyframes flutuar{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+
+/* BOTÃO */
+.botao{
+    padding:16px 30px;
+    border:none;
+    border-radius:50px;
+
+    background:white;
+    color:#d62b78;
+
+    font-size:17px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 25px rgba(90,0,45,.3);
+
+    animation:pulsarBotao 2s infinite;
+}
+
+.botao:active{
+    transform:scale(.95);
+}
+
+@keyframes pulsarBotao{
+    0%,100%{
+        box-shadow:0 8px 25px rgba(90,0,45,.3);
+    }
+
+    50%{
+        box-shadow:
+        0 0 25px white,
+        0 8px 30px rgba(90,0,45,.4);
+    }
+}
+
+
+/* CONTEÚDO */
+#conteudo{
+    display:none;
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:720px;
+    margin:auto;
+    padding:40px 20px 70px;
+    animation:subir 1s ease;
+}
+
+@keyframes subir{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* TÍTULO */
+.titulo{
+    text-align:center;
+    font-size:clamp(30px,8vw,45px);
+    margin-bottom:30px;
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,.7);
+
+    animation:aparecer 1.5s ease;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* CARTA */
+.cartao{
+    position:relative;
+
+    background:rgba(255,255,255,.17);
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.4);
+
+    border-radius:28px;
+
+    padding:28px 22px;
+
+    box-shadow:
+    0 15px 45px rgba(70,0,40,.3);
+
+    line-height:1.8;
+    font-size:17px;
+
+    overflow:hidden;
+}
+
+.cartao p{
+    margin-bottom:20px;
+}
+
+.cartao p strong{
+    color:#fff;
+}
+
+
+/* FINAL */
+.final{
+    text-align:center;
+
+    margin-top:30px;
+    padding-top:25px;
+
+    border-top:
+    1px solid
+    rgba(255,255,255,.35);
+
+    font-size:23px;
+    font-weight:bold;
+
+    animation:pulsarFinal 2s infinite;
+}
+
+@keyframes pulsarFinal{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.03);
+    }
+}
+
+
+/* ASSINATURA */
+.assinatura{
+    text-align:center;
+
+    margin-top:30px;
+
+    font-size:21px;
+
+    font-style:italic;
+
+    line-height:1.6;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,.7);
+
+    animation:assinatura 2s ease;
+}
+
+@keyframes assinatura{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* CORAÇÕES */
+.coracao{
+    position:fixed;
+    top:-60px;
+
+    z-index:10;
+
+    pointer-events:none;
+
+    text-shadow:
+    3px 5px 6px rgba(80,0,40,.35);
+
+    filter:
+    drop-shadow(0 0 7px rgba(255,255,255,.5));
+
+    animation:cair linear forwards;
+}
+
+@keyframes cair{
+
+    0%{
+        transform:
+        translateY(-60px)
+        rotate(0deg)
+        scale(.7);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    50%{
+        transform:
+        translateY(55vh)
+        rotate(180deg)
+        scale(1);
+    }
+
+    100%{
+        transform:
+        translateY(110vh)
+        rotate(360deg)
+        scale(.7);
+
+        opacity:0;
+    }
+}
+
+
+/* CONFETES */
+.confete{
+    position:fixed;
+
+    top:-20px;
+
+    width:8px;
+    height:15px;
+
+    z-index:20;
+
+    pointer-events:none;
+
+    animation:confeteCair linear forwards;
+}
+
+@keyframes confeteCair{
+
+    from{
+        transform:
+        translateY(-20px)
+        rotate(0);
+    }
+
+    to{
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+    }
+}
+
+
+/* RESPONSIVO */
+@media(max-width:500px){
+
+    .cartao{
+        padding:23px 18px;
+        font-size:16px;
+    }
+
+    .final{
+        font-size:20px;
+    }
+
+    .assinatura{
+        font-size:19px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- TELA INICIAL -->
+
+<section class="entrada" id="entrada">
+
+    <div class="pequeno">
+        UMA DATA MUITO ESPECIAL ❤️
+    </div>
+
+    <h1>
+        Feliz Aniversário
+    </h1>
+
+    <div class="numero">
+        17
+    </div>
+
+    <div class="subtitulo">
+        Cássia 💕
+    </div>
+
+    <div class="bolo">
+        🎂✨
+    </div>
+
+    <button
+        class="botao"
+        onclick="abrirMensagem()">
+
+        💌 Abrir minha mensagem
+
+    </button>
+
+</section>
+
+
+<!-- MENSAGEM -->
+
+<main id="conteudo">
+
+    <div class="titulo">
+        Feliz 17 anos, Cássia! ❤️
+    </div>
+
+
+    <div class="cartao">
+
+        <p>
+            Hoje é um dia muito especial, porque celebramos mais um ano da tua vida,
+            e eu só consigo agradecer a Deus por ter colocado uma pessoa tão
+            maravilhosa no meu caminho.
+        </p>
+
+        <p>
+            Sou muito grato por te ter na minha vida e por poder compartilhar contigo
+            tantos momentos, sorrisos, conversas e memórias que guardarei para sempre
+            no coração.
+        </p>
+
+        <p>
+            Hoje completas <strong>17 anos</strong>, e o meu maior desejo é que esta
+            nova fase da tua vida seja cheia de coisas boas. Que nunca te falte
+            saúde, amor, felicidade, paz e motivos para sorrir.
+        </p>
+
+        <p>
+            Que Deus te abençoe, te proteja em todos os momentos e ilumine cada passo
+            que deres. 🙏🏽❤️
+        </p>
+
+        <p>
+            Às vezes paro para pensar em como tudo começou. Nós nos conhecemos sem
+            imaginar que chegaríamos até aqui. Eu te conheci sem saber que viveria
+            tantos momentos contigo, sem saber que estaria aqui comemorando mais um
+            aniversário teu ao teu lado.
+        </p>
+
+        <p>
+            E, sinceramente, é uma das coisas mais bonitas que poderia ter acontecido
+            comigo.
+        </p>
+
+        <p>
+            Espero que este seja apenas mais um de muitos aniversários que ainda vamos
+            poder celebrar juntos. Quero continuar criando memórias contigo,
+            compartilhando momentos especiais e vendo-te crescer, conquistar os teus
+            sonhos e ser cada vez mais feliz.
+        </p>
+
+        <p>
+            Tu és uma pessoa incrível, Cássia. Tens um coração enorme, preocupas-te
+            com as pessoas que amas e tens uma maneira especial de tornar os momentos
+            mais bonitos.
+        </p>
+
+        <p>
+            E sim... às vezes és
+            <strong>meio chatinha 😂❤️</strong>,
+            mas até isso já faz parte de ti, e eu não trocaria a pessoa que és por ninguém.
+        </p>
+
+        <p>
+            Neste teu dia, quero que saibas o quanto és especial para mim.
+            Desejo-te muita felicidade, muito amor, muita saúde e muitos anos de vida.
+        </p>
+
+        <p>
+            Que nunca percas esse teu jeito, esse teu coração bonito e essa pessoa
+            maravilhosa que és.
+        </p>
+
+        <p>
+            Que os teus <strong>17 anos</strong> sejam apenas o começo de uma fase
+            incrível da tua vida. Que venham muitos sonhos realizados, muitos
+            sorrisos, muitas conquistas e, se Deus permitir, muitos outros
+            aniversários para celebrarmos juntos. 🎂💗
+        </p>
+
+
+        <div class="final">
+
+            Feliz aniversário,
+            minha Cássia. ❤️
+
+            <br><br>
+
+            Que o teu dia seja tão maravilhoso,
+            incrível e bonito quanto tu és. 💕
+
+        </div>
+
+
+        <div class="assinatura">
+
+            Com muito carinho ❤️
+            <br>
+            <strong>Thandy Romão</strong>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script>
+
+/* ABRIR MENSAGEM */
+
+function abrirMensagem(){
+
+    document.getElementById("entrada").style.display="none";
+
+    document.getElementById("conteudo").style.display="block";
+
+
+    /* CONFETES */
+
+    for(let i=0;i<80;i++){
+
+        setTimeout(
+            criarConfete,
+            Math.random()*1000
+        );
+
+    }
+
+
+    /* CORAÇÕES */
+
+    for(let i=0;i<25;i++){
+
+        setTimeout(
+            criarCoracao,
+            i*100
+        );
+
+    }
+
+}
+
+
+/* CRIAR CORAÇÃO */
+
+function criarCoracao(){
+
+    const coracao=document.createElement("div");
+
+    const tipos=[
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "💝"
+    ];
+
+    coracao.textContent=
+        tipos[
+            Math.floor(
+                Math.random()*tipos.length
+            )
+        ];
+
+    coracao.className="coracao";
+
+    coracao.style.left=
+        Math.random()*100+"vw";
+
+    coracao.style.fontSize=
+        (18+Math.random()*30)+"px";
+
+    coracao.style.animationDuration=
+        (4+Math.random()*5)+"s";
+
+    document.body.appendChild(coracao);
+
+
+    setTimeout(function(){
+
+        coracao.remove();
+
+    },10000);
+
+}
+
+
+/* CRIAR CONFETE */
+
+function criarConfete(){
+
+    const confete=
+        document.createElement("div");
+
+    confete.className="confete";
+
+    confete.style.left=
+        Math.random()*100+"vw";
+
+    confete.style.background=
+        "hsl("+
+        Math.random()*360+
+        ",90%,65%)";
+
+    confete.style.animationDuration=
+        (2+Math.random()*3)+"s";
+
+    document.body.appendChild(confete);
+
+
+    setTimeout(function(){
+
+        confete.remove();
+
+    },6000);
+
+}
+
+
+/* CHUVA CONTÍNUA DE CORAÇÕES */
+
+setInterval(function(){
+
+    const conteudo=
+        document.getElementById("conteudo");
+
+    if(conteudo.style.display==="block"){
+
+        criarCoracao();
+
+    }
+
+},700);
+
+</script>
+
+</body>
+  </html>
